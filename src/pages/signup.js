@@ -5,13 +5,15 @@ const Signup = () => {
   // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   const formik = useFormik({
-    initialValues: {
-      email: '',password:''
-    },
+    initialValues: {email: '',password:''},
+    
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      console.log("🚀 ~ file: Signup.js:15 ~ Signup ~ values:", values)
+      formik.resetForm()
     },
   });
+    
+    
   return (
     <form onSubmit={formik.handleSubmit}>
       <label htmlFor="email">Email</label>
